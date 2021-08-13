@@ -1,0 +1,46 @@
+<%- include("header") -%>
+    <h1 class="top">This is EJS file</h1>
+    <h3>To-Do-List</h3>
+
+
+   <h3> <%= kindOfDay %> </h3>
+
+   
+       <!-- <li>Cook Food</li>
+       <li>Buy Food</li>
+       <li>Eat Food</li> -->
+
+       <table>
+      <% for(var i=0;i<newListItems.length;i++){ %>
+        <%  if(i==0){%>
+              
+                  <th>Task</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+             
+        <%  } %>
+        <tr>  
+             
+              <td><h5>  <%= newListItems[i] %> </h5></td>  
+              <td><%= startTime[i] %> </td>
+               <td><%= endTime[i] %></td> 
+
+            
+        </tr>
+      <% } %>
+
+    </table>
+
+
+
+   <form method="POST"  action="/">
+    <input required type="text" name="newItem" id=""> <br> <br>
+    <label for="startTime">Start Time:</label>
+    <input required type="time" name="startTime" id="startTime"> <br> <br>
+    <label for="endTime">End Time:</label>
+    <input required type="time" name="endTime" id="endTime"> <br><br>
+    <button type="submit" name="list" value=<%= kindOfDay %> >+</button>
+    <!-- <input type="submit" name="" id="" value="Add">  -->
+</form>
+
+<%- include("footer") -%>
